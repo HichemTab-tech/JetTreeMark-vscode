@@ -59,7 +59,8 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "deploy": "vsce publish --yarn"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
@@ -69,6 +70,7 @@
     "@typescript-eslint/parser": "^8.28.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.3.2",
     "eslint": "^9.23.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
