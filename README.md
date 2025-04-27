@@ -1,71 +1,112 @@
-# jettreemark README
+# JetTreeMark for VS Code
 
-This is the README for your extension "jettreemark". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+![Build](https://github.com/HichemTab-tech/JetTreeMark-vscode/actions/workflows/build.yml/badge.svg)  
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/releases) [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ---
 
-## Following extension guidelines
+## 🚀 What is JetTreeMark?
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+**JetTreeMark** for VS Code brings the same lightning-fast,
+one-click tree-view generation you know from the IntelliJ plugin into your favorite editor.  
+Right-click any folder in the Explorer, choose **Show Tree View**,
+and you’ll instantly get a clean, customizable markdown-compatible tree of your project—ready to copy, share,
+or document.
+😉
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+> **Looking for IntelliJ IDEA support?**  
+> Check out the original [JetTreeMark plugin for IntelliJ IDEA](https://github.com/HichemTab-tech/JetTreeMark).
 
-## Working with Markdown
+---
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## ✨ Features
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+- 📂 **Generate** a neat tree view of any selected folder
+- 📋 **Copy** the filtered structure to clipboard with one click
+- ✔️ **Tri-state checkboxes** let you include/exclude subfolders & files
+- ⚡ **Lightweight**—built as a native VS Code Webview extension
+- 🎨 **Tailwind-powered** UI for a clean, responsive look
 
-## For more information
+---
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## 📷 Example Output
 
-**Enjoy!**
+```
+└── my-project/
+    ├── src/
+    │   ├── components/
+    │   │   └── Button.tsx
+    │   └── index.ts
+    ├── README.md
+    └── package.json
+```
+
+---
+
+## 🛠️ Installation
+
+### From the Marketplace (coming soon)
+
+Once published, you’ll be able to install JetTreeMark directly from the VS Code Extensions view.
+
+### Manual Installation
+
+1. [Download the latest `.vsix` release](https://github.com/HichemTab-tech/JetTreeMark-vscode/releases/latest)
+2. In VS Code, open the **Extensions** sidebar (Ctrl+Shift+X)
+3. Click the **⋯** menu → **Install from VSIX...**
+4. Select the downloaded file
+5. Reload VS Code when prompted
+
+---
+
+### Building from Source
+
+```bash
+git clone https://github.com/HichemTab-tech/JetTreeMark-vscode.git
+cd JetTreeMark-vscode
+
+# 1) Build the Webview UI
+cd webview-ui
+npm install
+npm run build
+cd ..
+
+# 2) Build the extension
+pnpm install
+pnpm run compile
+
+# 3) Launch for development
+code .
+# Press F5 in VS Code to open a new Extension Development Host
+```
+
+Your compiled `.vsix` will be generated via:
+
+```bash
+vsce package
+```
+
+---
+
+## 🎯 How to Use
+
+1. **Right-click** on any folder in the Explorer.
+2. Select **“Show Tree View”** from the context menu.
+3. The **JetTreeMark** view opens in the Activity Bar.
+4. Use the **tri-state checkboxes** to include/exclude items.
+5. Click **“Copy Selected Structure”** at the top to copy your markdown tree.
+
+---
+
+## ℹ️ About
+
+This VS Code extension is a companion to the original IntelliJ IDEA plugin:
+
+- **JetBrains/IntelliJ version**: [JetTreeMark](https://github.com/HichemTab-tech/JetTreeMark)
+- **VS Code version**: [JetTreeMark-vscode](https://github.com/HichemTab-tech/JetTreeMark-vscode)
+
+Both are MIT-licensed and developed by HichemTab-tech. Contributions, issues, and ⭐s are always welcome!
+
+---
+
+# 🌳 JetTreeMark — Draw your project structure, copy it instantly!
