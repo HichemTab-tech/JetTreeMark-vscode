@@ -1,26 +1,76 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
+import * as fs from 'fs';
+import * as path from 'path';
+import { JetTreeMarkViewProvider } from './JetTreeMarkViewProvider';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+export function activate(ctx: vscode.ExtensionContext) {
+  // Register the WebviewView (your “ToolWindow”)
+  const provider = new JetTreeMarkViewProvider(ctx.extensionUri);
+  ctx.subscriptions.push(
+    vscode.window.registerWebviewViewProvider(
+      'jettreemark.view',
+      provider
+    )
+  );  
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "jettreemark" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('jettreemark.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from JetTreeMark!');
-	});
-
-	context.subscriptions.push(disposable);
+  // Context‐menu command
+  ctx.subscriptions.push(
+    vscode.commands.registerCommand('jtt.showFolder', async (uri: vscode.Uri) => {
+      console.log('ShowFolder invoked on', uri.fsPath);
+      // 1) Switch to your JetTreeMark view container
+      await vscode.commands.executeCommand('workbench.view.extension.jettreemark');
+      console.log('➡ container revealed');
+      // 2) Tell the Webview to add that folder
+      const tree = buildTreeNode(uri.fsPath);
+      provider.postMessage({
+        command: 'addFolder',    // match whatever your webview listens for
+        folderPath: uri.fsPath,
+        tree: [tree]
+      });
+    })
+  );
 }
 
-// This method is called when your extension is deactivated
-export function deactivate() {}
+interface TreeNodeType {
+  id: string
+  name: string
+  type: "file" | "folder"
+  checked: boolean
+  indeterminate?: boolean
+  children?: TreeNodeType[]
+}
+
+/**
+ * Build a TreeNodeType *for* the directory itself, including its contents.
+ */
+function buildTreeNode(dir: string): TreeNodeType {
+  const name = path.basename(dir) || dir;
+  const node: TreeNodeType = {
+    id: dir,
+    name,
+    type: 'folder',
+    checked: true,
+    indeterminate: false,
+    children: []
+  };
+
+  const entries = fs.readdirSync(dir, { withFileTypes: true })
+    .filter(e => !e.name.startsWith('.'))
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      node.children!.push(buildTreeNode(fullPath));
+    } else {
+      node.children!.push({
+        id: fullPath,
+        name: entry.name,
+        type: 'file',
+        checked: true
+      });
+    }
+  }
+
+  return node;
+}
