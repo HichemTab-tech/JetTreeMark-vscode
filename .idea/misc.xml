@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AIAssistantCustomInstructionsStorage">
+    <option name="instructions">
+      <map>
+        <entry key="AIAssistant.VCS.GenerateCommitMessage">
+          <value>
+            <AIAssistantStoredInstruction>
+              <option name="actionId" value="AIAssistant.VCS.GenerateCommitMessage" />
+              <option name="content" value="Start with a concise, action-oriented sentence in imperative form (max 50 characters) to describe the key change.&#10;&#10;After a blank line, provide a brief explanation of what was changed and why, in 1-2 sentences.&#10;&#10;If there are significant or multiple changes, list them in bullet points. Use this to break down the changes clearly, explaining each key part." />
+            </AIAssistantStoredInstruction>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
