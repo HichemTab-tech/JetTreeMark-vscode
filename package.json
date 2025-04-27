@@ -3,6 +3,7 @@
   "displayName": "JetTreeMark",
   "description": "JetTreeMark is a VS Code plugin that generates a markdown-compatible structure tree for selected files and folders",
   "version": "0.0.1",
+  "publisher": "HichemTab-tech",
   "engines": {
     "vscode": "^1.99.0"
   },
@@ -60,7 +61,7 @@
     "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
     "lint": "eslint src",
     "test": "vscode-test",
-    "deploy": "vsce publish --yarn"
+    "deploy": "vsce publish"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
