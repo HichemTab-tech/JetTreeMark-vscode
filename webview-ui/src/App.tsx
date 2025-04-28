@@ -69,7 +69,7 @@ export default function TreeViewPage() {
   // copy logic (unchanged)
   const filterUncheckedNodes = (nodes: TreeNodeType[]): TreeNodeType[] =>
     nodes
-      .filter((n) => n.checked)
+      .filter((n) => n.checked || n.indeterminate)
       .map((n) => {
         const c = { ...n };
         if (c.children) c.children = filterUncheckedNodes(c.children);
