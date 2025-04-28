@@ -95,12 +95,12 @@ vsce package
 1. **Right-click** on any folder in the Explorer.
 2. Select **“Show Tree View”** from the context menu.
 
-   ![How to use the JetTreeMark plugin from folder context menu](https://github.com/HichemTab-tech/JetTreeMark-vscode/meta/screenshot-1.png "Screenshot -JetTreeMark in context menu-")
+   ![How to use the JetTreeMark plugin from folder context menu](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/meta/screenshot-1.png "Screenshot -JetTreeMark in context menu-")
 
 3. The **JetTreeMark** view opens in the Activity Bar.
 4. Use the **tri-state checkboxes** to include/exclude items.
 
-   ![How to use the JetTreeMark plugin to exclude nodes from the tree view result](https://github.com/HichemTab-tech/JetTreeMark-vscode/meta/screenshot-2.png "Screenshot - filter nodes from tree results -")
+   ![How to use the JetTreeMark plugin to exclude nodes from the tree view result](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/meta/screenshot-2.png "Screenshot - filter nodes from tree results -")
 
 5. Click **“Copy Selected Structure”** at the top to copy your markdown tree.
 
