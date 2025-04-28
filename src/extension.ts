@@ -3,6 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { JetTreeMarkViewProvider } from './JetTreeMarkViewProvider';
 
+// noinspection JSUnusedGlobalSymbols
 export function activate(ctx: vscode.ExtensionContext) {
   // Register the WebviewView (your “ToolWindow”)
   const provider = new JetTreeMarkViewProvider(ctx.extensionUri);
@@ -43,7 +44,7 @@ interface TreeNodeType {
 /**
  * Build a TreeNodeType *for* the directory itself, including its contents.
  */
-function buildTreeNode(dir: string): TreeNodeType {
+export function buildTreeNode(dir: string): TreeNodeType {
   const name = path.basename(dir) || dir;
   const node: TreeNodeType = {
     id: dir,

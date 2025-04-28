@@ -13,7 +13,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: "../src/webview-ui-dist",
+    outDir: "../webview-ui-dist",
     emptyOutDir: true,
     sourcemap: true,
   },

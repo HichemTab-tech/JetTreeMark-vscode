@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { TreeNodeType, TreeView } from "@/components/tree-view";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { X, Coffee, Github } from "lucide-react";
+import { X, Coffee, Github, Code } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "./components/logo";
 
@@ -212,15 +212,25 @@ function WelcomeTab() {
           </p>
         </div>
 
-        <div className="flex gap-4 mt-6">
+        <div className="flex gap-4 mt-6 justify-around w-full max-w-md">
           <a
-            href="https://github.com/HichemTab-tech"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+              href="https://github.com/HichemTab-tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-muted-foreground hover:text-blue-700 transition-colors"
           >
-            <Github size={20} />
+            <Github size={20} className="group-hover:animate-wiggle transition-transform"/>
             <span>GitHub</span>
+          </a>
+
+          <a
+              href="https://github.com/HichemTab-tech/JetTreeMark-vscode"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-2 text-muted-foreground hover:text-green-500 transition-colors"
+          >
+            <Code size={20} className="group-hover:animate-spin transition-transform"/>
+            <span>Contribute</span>
           </a>
 
           <a

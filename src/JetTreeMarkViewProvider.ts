@@ -16,17 +16,17 @@ export class JetTreeMarkViewProvider implements vscode.WebviewViewProvider {
     webviewView.webview.options = {
       enableScripts: true,
       localResourceRoots: [
-        vscode.Uri.joinPath(this.extensionUri, 'src', 'webview-ui-dist')
+        vscode.Uri.joinPath(this.extensionUri, 'webview-ui-dist')
       ]
     };
 
     // Load the built HTML
-    const folder = path.join(this.extensionUri.fsPath, 'src', 'webview-ui-dist');
+    const folder = path.join(this.extensionUri.fsPath, 'webview-ui-dist');
     let html = fs.readFileSync(path.join(folder, 'index.html'), 'utf8');
 
     // 1) compute the folder URI for assets
     const baseUri = webviewView.webview.asWebviewUri(
-      vscode.Uri.joinPath(this.extensionUri, 'src', 'webview-ui-dist')
+      vscode.Uri.joinPath(this.extensionUri, 'webview-ui-dist')
     ) + '/';
 
     // 2) inject the <base> so that all "./…" references resolve correctly
