@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "publisher": "HichemTab-tech",
   "repository": "https://github.com/HichemTab-tech/JetTreeMark-vscode",
+  "icon": "src/pluginIcon.ico",
   "engines": {
     "vscode": "^1.99.0"
   },
