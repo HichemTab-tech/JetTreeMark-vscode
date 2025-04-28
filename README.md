@@ -45,9 +45,11 @@ or document.
 
 ## 🛠️ Installation
 
-### From the Marketplace (coming soon)
+### From the Marketplace
 
-Once published, you’ll be able to install JetTreeMark directly from the VS Code Extensions view.
+JetTreeMark is now available on the Visual Studio Marketplace!  
+Install it directly from VS Code’s Extensions view—just search for **JetTreeMark** and click **Install**.
+
 
 ### Manual Installation
 
