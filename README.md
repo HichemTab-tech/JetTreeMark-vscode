@@ -1,7 +1,7 @@
 # JetTreeMark for VS Code
 
 ![Build](https://github.com/HichemTab-tech/JetTreeMark-vscode/actions/workflows/ci.yml/badge.svg)  
-[![Version](https://img.shields.io/badge/version-0.0.4-blue.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/releases) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/releases) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/LICENSE)
 
 ---
 
