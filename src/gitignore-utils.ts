@@ -97,6 +97,15 @@ function matchesPattern(
 ): boolean {
   const patternStr = pattern.pattern.replace(/\\/g, '/');
 
+  // For directory patterns (ending with /), also check without the trailing slash
+  // when matching against directories
+  if (pattern.isDirectory && isDirectory && patternStr.endsWith('/')) {
+    const patternWithoutSlash = patternStr.slice(0, -1);
+    if (normalizedPath === patternWithoutSlash) {
+      return true;
+    }
+  }
+
   // Handle exact matches
   if (!patternStr.includes('*')) {
     if (pattern.isAbsolute) {
