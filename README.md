@@ -1,7 +1,7 @@
 # JetTreeMark for VS Code
 
 ![Build](https://github.com/HichemTab-tech/JetTreeMark-vscode/actions/workflows/ci.yml/badge.svg)  
-[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/releases) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/LICENSE)
+[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/releases) [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/LICENSE)
 
 ---
 
@@ -10,7 +10,7 @@
 **JetTreeMark** for VS Code brings the same lightning-fast,
 one-click tree-view generation you know from the IntelliJ plugin into your favorite editor.  
 Right-click any folder in the Explorer, choose **Show Tree View**,
-and you’ll instantly get a clean, customizable markdown-compatible tree of your project—ready to copy, share,
+and you'll instantly get a clean, customizable markdown-compatible tree of your project—ready to copy, share,
 or document.
 😉
 
@@ -24,6 +24,7 @@ or document.
 - 📂 **Generate** a neat tree view of any selected folder
 - 📋 **Copy** the filtered structure to clipboard with one click
 - ✔️ **Tri-state checkboxes** let you include/exclude subfolders & files
+- 🖱️ **Context menu** with powerful selection operations (check/uncheck folders, files, levels)
 - ⚡ **Lightweight**—built as a native VS Code Webview extension
 - 🎨 **Tailwind-powered** UI for a clean, responsive look
 
@@ -48,7 +49,7 @@ or document.
 ### From the Marketplace
 
 JetTreeMark is now available on the Visual Studio Marketplace!  
-Install it directly from VS Code’s Extensions view—just search for **JetTreeMark** and click **Install**.
+Install it directly from VS Code's Extensions view—just search for **JetTreeMark** and click **Install**.
 
 
 ### Manual Installation
@@ -93,7 +94,7 @@ vsce package
 ## 🎯 How to Use
 
 1. **Right-click** on any folder in the Explorer.
-2. Select **“Show Tree View”** from the context menu.
+2. Select **"Show Tree View"** from the context menu.
 
    ![How to use the JetTreeMark plugin from folder context menu](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/meta/screenshot-1.png "Screenshot -JetTreeMark in context menu-")
 
@@ -102,7 +103,15 @@ vsce package
 
    ![How to use the JetTreeMark plugin to exclude nodes from the tree view result](https://github.com/HichemTab-tech/JetTreeMark-vscode/blob/master/meta/screenshot-2.png "Screenshot - filter nodes from tree results -")
 
-5. Click **“Copy Selected Structure”** at the top to copy your markdown tree.
+5. **Right-click** on any node to access the context menu with powerful selection operations:
+   - **Check All Children** - Include all files and folders under this node
+   - **Check All Folders** - Include only folders under this node
+   - **Uncheck All Children** - Exclude all files and folders under this node
+   - **Check Without Children** - Include only this node, not its children
+   - **Level-Specific Operations** - Apply operations only to the current level
+   - **Expand/Collapse** - Control node visibility
+
+6. Click **"Copy Selected Structure"** at the top to copy your markdown tree.
 
 ---
 
