@@ -5,6 +5,9 @@ on:
   release:
     types:
     - released
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
