@@ -4,13 +4,7 @@ on:
       - master
   release:
     types:
-    - created
-    if: |
-      !github.event.release.prerelease &&
-      !contains(github.ref, '-beta') &&
-      !contains(github.ref, '-alpha') &&
-      !contains(github.ref, '-rc') &&
-      !contains(github.ref, '-preview')
+    - released
 
 jobs:
   build:
